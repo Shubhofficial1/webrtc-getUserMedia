@@ -80,3 +80,6 @@ document
 document
   .querySelector("#stop-video")
   .addEventListener("click", (e) => stopMyFeed(e));
+document
+  .querySelector("#change-size")
+  .addEventListener("click", (e) => changeVideoSize(e));
