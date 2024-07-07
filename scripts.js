@@ -10,9 +10,20 @@ const constraints = {
 const getMicAndMicrophone = async (e) => {
   try {
     stream = await navigator.mediaDevices.getUserMedia(constraints);
+    changeButtons([
+      "green",
+      "blue",
+      "blue",
+      "grey",
+      "grey",
+      "grey",
+      "grey",
+      "grey",
+    ]);
     console.log(stream);
   } catch (err) {
     console.log("User denied permission to constraints");
+    console.log(err);
   }
 };
 
@@ -21,6 +32,16 @@ const showMyFeed = (e) => {
   videoEl.srcObject = stream;
   const tracks = stream.getTracks();
   console.log(tracks);
+  changeButtons([
+    "green",
+    "green",
+    "blue",
+    "blue",
+    "blue",
+    "grey",
+    "grey",
+    "blue",
+  ]);
 };
 
 const stopMyFeed = (e) => {
@@ -30,6 +51,16 @@ const stopMyFeed = (e) => {
     console.log(track);
     track.stop(); // disassociates the track from the source.
   });
+  changeButtons([
+    "blue",
+    "grey",
+    "grey",
+    "grey",
+    "grey",
+    "grey",
+    "grey",
+    "grey",
+  ]);
 };
 
 document
