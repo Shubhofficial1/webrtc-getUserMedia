@@ -29,6 +29,10 @@ const getMicAndMicrophone = async (e) => {
 
 const showMyFeed = (e) => {
   console.log("ShowMyFeed is working");
+  if (!stream) {
+    alert("Stream still loading...");
+    return;
+  }
   videoEl.srcObject = stream;
   const tracks = stream.getTracks();
   console.log(tracks);
@@ -46,6 +50,10 @@ const showMyFeed = (e) => {
 
 const stopMyFeed = (e) => {
   console.log("StopMyFeed is working");
+  if (!stream) {
+    alert("Stream still loading...");
+    return;
+  }
   const tracks = stream.getTracks();
   tracks.forEach((track) => {
     console.log(track);
