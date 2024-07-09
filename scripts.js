@@ -1,6 +1,7 @@
 const videoEl = document.querySelector("#my-video");
 
-let stream = null;
+let stream = null; // Initialized stream
+let mediaStream = null; // Initialized mediaSteam for screen sharing feature
 
 const constraints = {
   audio: true,

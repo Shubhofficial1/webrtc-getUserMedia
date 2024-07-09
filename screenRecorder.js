@@ -6,9 +6,16 @@ const startRecording = () => {
     alert("No Current Feed");
     return;
   }
+  // TODO : make both work
+  // We can do like below if we want screen record functionality :
+  // if (!mediaStream) {
+  //   alert("No Current Feed");
+  //   return;
+  // }
   console.log("Started Recording");
   recordedBlobs = []; // An array to hold the blobs for playback
   mediaRecorder = new MediaRecorder(stream); // Initialized media recorder
+  // mediaRecorder = new MediaRecorder(mediaStream); // Initialized like this for screen share
   mediaRecorder.ondataavailable = (e) => {
     // On data available , it will run (when stream ends,or stopped or we specifically ask)
     console.log("Data is available for the media recorder");
@@ -49,6 +56,7 @@ const stopRecording = () => {
 const playRecording = () => {
   if (!recordedBlobs) {
     alert("No Recording Saved");
+    return;
   }
   console.log("Play Recording");
   const superBuffer = new Blob(recordedBlobs); // superBuffer is a super buffer of the array of blobs
