@@ -1,5 +1,5 @@
-const supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
-console.log(supportedConstraints);
+// const supportedConstraints = navigator.mediaDevices.getSupportedConstraints();
+// console.log(supportedConstraints);
 
 const changeVideoSize = () => {
   //   Contains both audio track & video track
