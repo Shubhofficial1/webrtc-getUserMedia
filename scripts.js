@@ -96,13 +96,12 @@ document
 document
   .querySelector("#share-screen")
   .addEventListener("click", (e) => shareScreen(e));
-
 document
   .querySelector("#audio-input")
-  .addEventListener("click", (e) => changeAudioInput(e));
+  .addEventListener("change", (e) => changeAudioInput(e));
 document
   .querySelector("#audio-output")
-  .addEventListener("click", (e) => changeAudioOutput(e));
+  .addEventListener("change", (e) => changeAudioOutput(e));
 document
   .querySelector("#video-input")
-  .addEventListener("click", (e) => changeVideo(e));
+  .addEventListener("change", (e) => changeVideo(e));
